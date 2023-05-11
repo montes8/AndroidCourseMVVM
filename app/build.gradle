@@ -40,9 +40,13 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8
     }
 
-    buildFeatures {
-        viewBinding true
-        dataBinding true
+
+    viewBinding {
+        enabled = true
+    }
+
+    dataBinding {
+        enabled = true
     }
 }
 
