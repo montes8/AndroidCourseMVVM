@@ -4,6 +4,7 @@
     package="com.gb.val.androidcoursemvvm">
 
     <application
+        android:name=".application.ApplicationCourse"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,10 +14,10 @@
         android:theme="@style/AppTheme.NoActionBarWhite"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".ui.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.HomeActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".ui.splash.SplashActivity"
