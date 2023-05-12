@@ -1,4 +1,4 @@
-package com.gb.`val`.androidcoursemvvm.application
+package com.gb.vale.androidcoursemvvm.application
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

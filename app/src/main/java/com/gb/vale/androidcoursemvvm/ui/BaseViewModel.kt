@@ -1,4 +1,4 @@
-package com.gb.`val`.androidcoursemvvm.ui
+package com.gb.vale.androidcoursemvvm.ui
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

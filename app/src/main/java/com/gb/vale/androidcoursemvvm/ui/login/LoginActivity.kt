@@ -1,11 +1,11 @@
-package com.gb.`val`.androidcoursemvvm.ui.login
+package com.gb.vale.androidcoursemvvm.ui.login
 
 import android.content.Context
 import android.content.Intent
 import androidx.databinding.DataBindingUtil
-import com.gb.`val`.androidcoursemvvm.R
-import com.gb.`val`.androidcoursemvvm.databinding.ActivityLoginBinding
-import com.gb.`val`.androidcoursemvvm.ui.BaseActivity
+import com.gb.vale.androidcoursemvvm.R
+import com.gb.vale.androidcoursemvvm.databinding.ActivityLoginBinding
+import com.gb.vale.androidcoursemvvm.ui.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

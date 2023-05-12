@@ -1,8 +1,8 @@
-package com.gb.`val`.androidcoursemvvm.utils
+package com.gb.vale.androidcoursemvvm.utils
 
 import android.view.View
 import android.view.animation.AnimationUtils
-import com.gb.`val`.androidcoursemvvm.R
+import com.gb.vale.androidcoursemvvm.R
 
 fun View.animationTop(){
     this.animation = AnimationUtils.loadAnimation(this.context, R.anim.ani_top)

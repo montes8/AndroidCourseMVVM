@@ -1,16 +1,15 @@
-package com.gb.`val`.androidcoursemvvm.ui.splash
+package com.gb.vale.androidcoursemvvm.ui.splash
 
 import android.annotation.SuppressLint
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
-import com.gb.`val`.androidcoursemvvm.ui.login.LoginActivity
-import com.gb.`val`.androidcoursemvvm.R
-import com.gb.`val`.androidcoursemvvm.databinding.ActivitySplashBinding
-import com.gb.`val`.androidcoursemvvm.ui.BaseActivity
-import com.gb.`val`.androidcoursemvvm.ui.home.HomeActivity
-import com.gb.`val`.androidcoursemvvm.ui.home.HomeActivity_GeneratedInjector
-import com.gb.`val`.androidcoursemvvm.utils.animationBottom
-import com.gb.`val`.androidcoursemvvm.utils.animationTop
+import com.gb.vale.androidcoursemvvm.ui.login.LoginActivity
+import com.gb.vale.androidcoursemvvm.R
+import com.gb.vale.androidcoursemvvm.databinding.ActivitySplashBinding
+import com.gb.vale.androidcoursemvvm.ui.BaseActivity
+import com.gb.vale.androidcoursemvvm.ui.home.HomeActivity
+import com.gb.vale.androidcoursemvvm.utils.animationBottom
+import com.gb.vale.androidcoursemvvm.utils.animationTop
 import dagger.hilt.android.AndroidEntryPoint
 
 @SuppressLint("CustomSplashScreen")

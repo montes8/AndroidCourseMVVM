@@ -1,9 +1,9 @@
-package com.gb.`val`.androidcoursemvvm.ui.splash
+package com.gb.vale.androidcoursemvvm.ui.splash
 
 import android.os.Handler
 import android.os.Looper
 import androidx.lifecycle.MutableLiveData
-import com.gb.`val`.androidcoursemvvm.ui.BaseViewModel
+import com.gb.vale.androidcoursemvvm.ui.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

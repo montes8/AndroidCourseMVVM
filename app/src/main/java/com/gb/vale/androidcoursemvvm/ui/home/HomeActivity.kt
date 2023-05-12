@@ -1,15 +1,15 @@
-package com.gb.`val`.androidcoursemvvm.ui.home
+package com.gb.vale.androidcoursemvvm.ui.home
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.gb.`val`.androidcoursemvvm.R
-import com.gb.`val`.androidcoursemvvm.databinding.ActivityHomeBinding
-import com.gb.`val`.androidcoursemvvm.databinding.ActivitySplashBinding
-import com.gb.`val`.androidcoursemvvm.ui.BaseActivity
-import com.gb.`val`.androidcoursemvvm.ui.BaseViewModel
+import com.gb.vale.androidcoursemvvm.R
+import com.gb.vale.androidcoursemvvm.databinding.ActivityHomeBinding
+import com.gb.vale.androidcoursemvvm.databinding.ActivitySplashBinding
+import com.gb.vale.androidcoursemvvm.ui.BaseActivity
+import com.gb.vale.androidcoursemvvm.ui.BaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

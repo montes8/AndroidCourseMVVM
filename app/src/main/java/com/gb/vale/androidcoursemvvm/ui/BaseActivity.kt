@@ -1,4 +1,4 @@
-package com.gb.`val`.androidcoursemvvm.ui
+package com.gb.vale.androidcoursemvvm.ui
 
 import android.os.Bundle
 import android.util.Log
