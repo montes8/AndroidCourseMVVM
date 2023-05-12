@@ -1,4 +1,4 @@
-package com.gb.`val`.androidcoursemvvm.ui.splash
+package com.gb.vale.androidcoursemvvm.ui.splash
 
 import android.os.Handler
 import android.os.Looper

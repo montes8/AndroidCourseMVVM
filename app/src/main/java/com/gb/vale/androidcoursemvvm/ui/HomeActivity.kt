@@ -1,10 +1,10 @@
-package com.gb.`val`.androidcoursemvvm.ui
+package com.gb.vale.androidcoursemvvm.ui
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.gb.`val`.androidcoursemvvm.R
+import com.gb.vale.androidcoursemvvm.R
 
 class HomeActivity : AppCompatActivity() {
 

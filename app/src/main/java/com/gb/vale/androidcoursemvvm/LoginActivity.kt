@@ -1,4 +1,4 @@
-package com.gb.`val`.androidcoursemvvm
+package com.gb.vale.androidcoursemvvm
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

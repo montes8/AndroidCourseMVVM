@@ -1,14 +1,12 @@
-package com.gb.`val`.androidcoursemvvm.ui.splash
+package com.gb.vale.androidcoursemvvm.ui.splash
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.animation.AnimationUtils
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import com.gb.`val`.androidcoursemvvm.R
-import com.gb.`val`.androidcoursemvvm.databinding.ActivitySplashBinding
-import com.gb.`val`.androidcoursemvvm.ui.HomeActivity
+import com.gb.vale.androidcoursemvvm.R
+import com.gb.vale.androidcoursemvvm.databinding.ActivitySplashBinding
+import com.gb.vale.androidcoursemvvm.ui.HomeActivity
 
 class SplashActivity : AppCompatActivity() {
 

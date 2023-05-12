@@ -11,7 +11,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.gb.val.androidcoursemvvm"
+        applicationId "com.gb.vale.androidcoursemvvm"
         minSdkVersion 23
         targetSdkVersion 32
         versionCode 1
