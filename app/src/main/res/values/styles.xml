@@ -18,10 +18,17 @@
         <item name="android:windowDisablePreview">true</item>
     </style>
 
-    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+    <style name="TextInputLayoutEdit" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="colorControlActivated">@color/gray_140</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="colorControlNormal">@color/white</item>
-        <item name="colorAccent">@color/white</item>
-        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="boxCornerRadiusTopStart">20dp</item>
+        <item name="boxCornerRadiusTopEnd">20dp</item>
+        <item name="boxCornerRadiusBottomStart">20dp</item>
+        <item name="boxCornerRadiusBottomEnd">20dp</item>
     </style>
 
 

@@ -9,8 +9,9 @@
     tools:context=".ui.home.HomeActivity">
 
     <TextView
+        android:id="@+id/textLogout"
         android:layout_width="wrap_content"
-        android:text="HOME"
+        android:text="CERRAR SESION"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
