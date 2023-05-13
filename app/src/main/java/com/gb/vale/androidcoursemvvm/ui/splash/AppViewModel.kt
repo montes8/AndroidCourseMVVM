@@ -11,20 +11,14 @@ import javax.inject.Inject
 @HiltViewModel
 class AppViewModel @Inject constructor(private val appUseCase : AppUseCase): BaseViewModel() {
 
+
     val successSplash = MutableLiveData<Boolean>()
     val successLogin = MutableLiveData<User>()
 
-    fun validLogin(){
+    fun loadValidateLogin(){
         execute {
-            val response = appUseCase.getToken()
+             val response = appUseCase.getToken()
              successSplash.postValue(response)
-
-        }
-    }
-
-    fun logout(){
-        execute {
-            appUseCase.logout()
         }
     }
 
@@ -32,7 +26,10 @@ class AppViewModel @Inject constructor(private val appUseCase : AppUseCase): Bas
         execute {
             val response = appUseCase.login(user,pass)
             successLogin.postValue(response)
-
         }
+    }
+
+    fun logout(){
+        appUseCase.logout()
     }
 }

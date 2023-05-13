@@ -2,6 +2,7 @@ package com.gb.vale.androidcoursemvvm.repository.di
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.appcompat.app.AppCompatActivity
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +16,8 @@ class SharedPreferencesModule{
 
     @Singleton
     @Provides
-    fun provideSharedPreference(@ApplicationContext context : Context):SharedPreferences =
-        context.getSharedPreferences("mypreference",Context.MODE_PRIVATE)
+    fun providerSharedPreference(@ApplicationContext context: Context): SharedPreferences =
+        context.getSharedPreferences("ACMPreferences", AppCompatActivity.MODE_PRIVATE)
+
+
 }

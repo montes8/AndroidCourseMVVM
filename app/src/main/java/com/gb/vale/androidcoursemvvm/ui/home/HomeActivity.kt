@@ -2,27 +2,24 @@ package com.gb.vale.androidcoursemvvm.ui.home
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.gb.vale.androidcoursemvvm.R
 import com.gb.vale.androidcoursemvvm.databinding.ActivityHomeBinding
-import com.gb.vale.androidcoursemvvm.databinding.ActivitySplashBinding
 import com.gb.vale.androidcoursemvvm.ui.BaseActivity
 import com.gb.vale.androidcoursemvvm.ui.BaseViewModel
-import com.gb.vale.androidcoursemvvm.ui.login.LoginActivity
 import com.gb.vale.androidcoursemvvm.ui.splash.AppViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeActivity : BaseActivity() {
 
-    private lateinit var binding : ActivityHomeBinding
-    private val viewModel : AppViewModel by viewModels()
-    companion object{
-        fun newInstance(context: Context) = context.startActivity(Intent(context, HomeActivity::class.java))
+    private lateinit var binding: ActivityHomeBinding
+    private val viewModel: AppViewModel by viewModels()
+
+    companion object {
+        fun newInstance(context: Context) =
+            context.startActivity(Intent(context, HomeActivity::class.java))
     }
 
     override fun getBinding() {
@@ -39,7 +36,6 @@ class HomeActivity : BaseActivity() {
 
     override fun observerViewModel() {}
 
-    override fun getViewModel(): BaseViewModel?  = null
-
+    override fun getViewModel(): BaseViewModel? = null
 
 }

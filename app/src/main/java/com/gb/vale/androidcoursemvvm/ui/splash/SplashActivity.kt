@@ -1,7 +1,6 @@
 package com.gb.vale.androidcoursemvvm.ui.splash
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import androidx.activity.viewModels
@@ -15,14 +14,13 @@ import com.gb.vale.androidcoursemvvm.utils.animationBottom
 import com.gb.vale.androidcoursemvvm.utils.animationTop
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @SuppressLint("CustomSplashScreen")
 @AndroidEntryPoint
 class SplashActivity : BaseActivity() {
 
-     private lateinit var binding : ActivitySplashBinding
-     private val viewModel : AppViewModel  by viewModels()
-     var value = false
+    private lateinit var binding: ActivitySplashBinding
+    private val viewModel: AppViewModel by viewModels()
+    var value = false
 
     override fun getBinding() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
@@ -33,17 +31,17 @@ class SplashActivity : BaseActivity() {
         binding.lnBannerTop.animationTop()
         binding.lnBannerBottom.animationBottom()
         Handler(Looper.getMainLooper()).postDelayed({
-            viewModel.validLogin()
-        },2000)
+            viewModel.loadValidateLogin()
+        }, 2000)
 
     }
 
     override fun observerViewModel() {
-        viewModel.successSplash.observe(this){
+        viewModel.successSplash.observe(this) {
             it?.let {
-               if (it) HomeActivity.newInstance(this) else LoginActivity.newInstance(this)
+                if (it) HomeActivity.newInstance(this) else LoginActivity.newInstance(this)
                 finish()
             }
-     }
+        }
     }
 }
