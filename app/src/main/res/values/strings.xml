@@ -10,4 +10,11 @@
     <string name="text_btn_login">Iniciar sesión</string>
     <string name="text_btn_register">Crear cuenta</string>
     <string name="text_test">texto de prueba</string>
+    <string name="text_title_home">HOME</string>
+
+
+    <string name="text_logout">Cerrar Sesión</string>
+    <string name="text_logout_sub">Estas seguro que deseas cerrar sesión</string>
+    <string name="text_yes">SI</string>
+    <string name="text_not">NO</string>
 </resources>

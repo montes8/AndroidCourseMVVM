@@ -12,7 +12,7 @@ import com.gb.vale.androidcoursemvvm.databinding.ActivityLoginBinding
 import com.gb.vale.androidcoursemvvm.ui.AppViewModel
 import com.gb.vale.androidcoursemvvm.ui.home.HomeActivity
 import com.gb.vale.androidcoursemvvm.ui.register.FormActivity
-import com.gb.vale.androidcoursemvvm.ui.utils.toasGeneric
+import com.gb.vale.androidcoursemvvm.ui.utils.toastGeneric
 
 class LoginActivity : AppCompatActivity() {
 
@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
             it?.let {
                 shared?.edit()?.putBoolean("token",it.token.isNotEmpty())?.apply()
                 HomeActivity.newInstance(this)
-            }?:toasGeneric("Usuario incorrecto")
+            }?:toastGeneric("Usuario incorrecto")
         }
 
         binding.textRegister.setOnClickListener { FormActivity.newInstance(this) }
