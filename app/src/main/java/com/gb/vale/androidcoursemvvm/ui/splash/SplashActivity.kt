@@ -24,10 +24,15 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
         binding.lifecycleOwner = this
+        //animaciones
         animation()
+        //inicializamos SharedPreferences y recuperamos un valor guardado
         shared = getSharedPreferences("myPreference", MODE_PRIVATE)
         flagLogin = shared?.getBoolean("token",false)?:false
+
         viewModel.validateLogin()
+
+        //observador
         viewModel.successSplash.observe(this){
             if (flagLogin) HomeActivity.newInstance(this) else LoginActivity.newInstance(this)
             finish()

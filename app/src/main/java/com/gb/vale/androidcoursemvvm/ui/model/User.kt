@@ -1,6 +1,8 @@
 package com.gb.vale.androidcoursemvvm.ui.model
 
 class User(
-    var name : String = "",
-    var token : String = "",
+    var id: Long = 0,
+    var name: String = "",
+    var pass: String = "",
+    var token: String = ""
 )

@@ -24,7 +24,11 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
         binding.lifecycleOwner = this
+
+        //inicializamos el sharedPreference
         shared = getSharedPreferences("myPreference", MODE_PRIVATE)
+
+        //simulamos cerrar sesion
         binding.textLogout.setOnClickListener {
            shared?.edit()?.putBoolean("token",false)?.apply()
             finish()

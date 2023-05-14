@@ -11,6 +11,8 @@ import com.gb.vale.androidcoursemvvm.R
 import com.gb.vale.androidcoursemvvm.databinding.ActivityLoginBinding
 import com.gb.vale.androidcoursemvvm.ui.AppViewModel
 import com.gb.vale.androidcoursemvvm.ui.home.HomeActivity
+import com.gb.vale.androidcoursemvvm.ui.register.FormActivity
+import com.gb.vale.androidcoursemvvm.ui.utils.toasGeneric
 
 class LoginActivity : AppCompatActivity() {
 
@@ -26,22 +28,25 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         binding.lifecycleOwner = this
+        //inicializamos el sharedPreference
         shared = getSharedPreferences("myPreference", MODE_PRIVATE)
-        binding.editUserLogin.addTextChangedListener {
-            binding.editUserLayout.isErrorEnabled = false
-        }
-        binding.editPassLogin.addTextChangedListener {
-            binding.editUserLayout.isErrorEnabled = false
-        }
+
+        //detectamos los editables mientras se escribe
+        binding.editUserLogin.addTextChangedListener { binding.editUserLayout.isErrorEnabled = false }
+        binding.editPassLogin.addTextChangedListener { binding.editUserLayout.isErrorEnabled = false}
+
         binding.btnLogin.setOnClickListener { if (validateLogin()) login() }
 
 
+        //observadores
         viewModel.successLogin.observe(this){
             it?.let {
                 shared?.edit()?.putBoolean("token",it.token.isNotEmpty())?.apply()
                 HomeActivity.newInstance(this)
-            }
+            }?:toasGeneric("Usuario incorrecto")
         }
+
+        binding.textRegister.setOnClickListener { FormActivity.newInstance(this) }
     }
 
     private fun validateLogin(): Boolean {

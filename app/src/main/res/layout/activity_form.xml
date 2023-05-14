@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.register.FormActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_20"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textTitleLogin"
+            android:layout_width="match_parent"
+            android:text="@string/text_register"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editUseRegisterLayout"
+            style="@style/TextInputLayoutEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/text_hint_user"
+            android:layout_marginTop="@dimen/size_20"
+            android:textColorHint="@color/gray_150"
+            app:hintTextColor="@color/gray_150"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTitleLogin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editUserRegister"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_56"
+                android:imeOptions="actionNext"
+                android:paddingStart="@dimen/size_8"
+                android:paddingEnd="@dimen/size_8" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editPassLayout"
+            style="@style/TextInputLayoutEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_20"
+            android:hint="@string/text_hint_pass"
+            android:textColorHint="@color/gray_150"
+            app:hintTextColor="@color/gray_150"
+            app:passwordToggleEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editUseRegisterLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editRegisterLogin"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_56"
+                android:inputType="textPassword"
+                android:imeOptions="actionDone"
+                android:paddingStart="@dimen/size_8"
+                android:paddingEnd="@dimen/size_8" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_56"
+            android:id="@+id/btnRegister"
+            android:background="@drawable/bg_blue"
+            android:layout_marginTop="@dimen/size_20"
+            android:text="@string/text_register"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editPassLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
