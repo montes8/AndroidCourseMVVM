@@ -1,4 +1,4 @@
-package com.gb.vale.androidcoursemvvm.usecases
+package com.gb.vale.androidcoursemvvm.usecases.db
 
 import com.gb.vale.androidcoursemvvm.model.User
 

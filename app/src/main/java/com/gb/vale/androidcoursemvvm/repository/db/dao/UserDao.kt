@@ -14,7 +14,7 @@ interface UserDao {
 
 
     @Insert
-    fun insert(user: UserEntity): Long
+    fun insert(user: UserEntity): Long?
 
     @Delete
     fun deleteUser(usuarios: UserEntity):Int
