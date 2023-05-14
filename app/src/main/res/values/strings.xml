@@ -9,4 +9,5 @@
     <string name="text_hint_pass">Contraseña</string>
     <string name="text_btn_login">Iniciar sesión</string>
     <string name="text_btn_register">Crear cuenta</string>
+    <string name="text_test">texto de prueba</string>
 </resources>
