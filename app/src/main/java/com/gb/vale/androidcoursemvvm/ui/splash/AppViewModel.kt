@@ -13,12 +13,20 @@ class AppViewModel @Inject constructor(private val appUseCase : AppUseCase): Bas
 
 
     val successSplash = MutableLiveData<Boolean>()
-    val successLogin = MutableLiveData<User>()
+    val successLogin = MutableLiveData<User?>()
+    val successRegister = MutableLiveData<Boolean>()
 
     fun loadValidateLogin(){
         execute {
              val response = appUseCase.getToken()
              successSplash.postValue(response)
+        }
+    }
+
+    fun register(user : String, pass : String){
+        execute {
+            val response = appUseCase.register(user,pass)
+            successRegister.postValue(response)
         }
     }
 

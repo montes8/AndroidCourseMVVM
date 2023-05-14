@@ -9,7 +9,9 @@ import com.gb.vale.androidcoursemvvm.R
 import com.gb.vale.androidcoursemvvm.databinding.ActivityLoginBinding
 import com.gb.vale.androidcoursemvvm.ui.BaseActivity
 import com.gb.vale.androidcoursemvvm.ui.home.HomeActivity
+import com.gb.vale.androidcoursemvvm.ui.register.FormActivity
 import com.gb.vale.androidcoursemvvm.ui.splash.AppViewModel
+import com.gb.vale.androidcoursemvvm.utils.toastGeneric
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,6 +38,7 @@ class LoginActivity : BaseActivity() {
             binding.editUserLayout.isErrorEnabled = false
         }
         binding.btnLogin.setOnClickListener { if (validateLogin()) login() }
+        binding.btnCreateRegister.setOnClickListener { FormActivity.newInstance(this) }
     }
 
     private fun validateLogin(): Boolean {
@@ -64,7 +67,7 @@ class LoginActivity : BaseActivity() {
         viewModel.successLogin.observe(this) {
             it?.let {
                 HomeActivity.newInstance(this)
-            }
+            }?:toastGeneric("usuario incorrecto")
         }
     }
 

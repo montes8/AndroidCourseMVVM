@@ -5,7 +5,6 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.gb.vale.androidcoursemvvm.repository.db.ACMDataBase
-import com.gb.vale.androidcoursemvvm.repository.db.dao.UserDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,25 +21,24 @@ class SharedPreferencesModule{
     fun providerSharedPreference(@ApplicationContext context: Context): SharedPreferences =
         context.getSharedPreferences("ACMPreferences", AppCompatActivity.MODE_PRIVATE)
 
-
 }
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AppModule {
-
-    @Singleton // Tell Dagger-Hilt to create a singleton accessible everywhere in ApplicationCompenent (i.e. everywhere in the application)
-    @Provides
-    fun provideYourDatabase(
-        @ApplicationContext context: Context
-    ) = Room.databaseBuilder(
-        context,
-        ACMDataBase::class.java,
-        "acm_course.db"
-    ).build() // The reason we can construct a database for the repo
+class DataBaseModule{
 
     @Singleton
     @Provides
-    fun provideUserDao(db: ACMDataBase) = db.userDao()
+    fun providerMyDatabase(@ApplicationContext context: Context) =
+        Room.databaseBuilder(context,ACMDataBase::class.java,"acm_course.db").build()
 
-    }
+    @Singleton
+    @Provides
+    fun providerUserDao(db: ACMDataBase) =
+        db.userDao()
+
+}
+
+
+
+
