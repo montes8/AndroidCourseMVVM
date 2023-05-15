@@ -1,6 +1,6 @@
-package com.gb.vale.androidcoursemvvm.ui.network
+package com.gb.vale.androidcoursemvvm.repository.network
 
-import com.gb.vale.androidcoursemvvm.ui.utils.URL_BASE
+import com.gb.vale.androidcoursemvvm.utils.URL_BASE
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

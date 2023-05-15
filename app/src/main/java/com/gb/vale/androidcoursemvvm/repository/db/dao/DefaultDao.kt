@@ -1,7 +1,7 @@
-package com.gb.vale.androidcoursemvvm.ui.db.dao
+package com.gb.vale.androidcoursemvvm.repository.db.dao
 
 import androidx.room.*
-import com.gb.vale.androidcoursemvvm.ui.db.entity.DefaultEntity
+import com.gb.vale.androidcoursemvvm.repository.db.entity.DefaultEntity
 
 @Dao
 interface InitDao {

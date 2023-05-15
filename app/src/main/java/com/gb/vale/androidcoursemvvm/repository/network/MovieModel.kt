@@ -1,4 +1,4 @@
-package com.gb.vale.androidcoursemvvm.ui.network
+package com.gb.vale.androidcoursemvvm.repository.network
 
 import com.google.gson.annotations.SerializedName
 

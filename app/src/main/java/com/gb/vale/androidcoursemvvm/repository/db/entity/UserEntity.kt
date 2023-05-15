@@ -1,4 +1,4 @@
-package com.gb.vale.androidcoursemvvm.ui.db.entity
+package com.gb.vale.androidcoursemvvm.repository.db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

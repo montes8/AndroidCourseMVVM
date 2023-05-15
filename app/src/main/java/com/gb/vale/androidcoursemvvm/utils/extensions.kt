@@ -1,4 +1,4 @@
-package com.gb.vale.androidcoursemvvm.ui.utils
+package com.gb.vale.androidcoursemvvm.utils
 
 import android.content.Context
 import android.widget.Toast

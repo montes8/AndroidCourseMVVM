@@ -1,4 +1,4 @@
-package com.gb.vale.androidcoursemvvm.ui.network
+package com.gb.vale.androidcoursemvvm.repository.network
 
 import retrofit2.Call
 import retrofit2.http.GET

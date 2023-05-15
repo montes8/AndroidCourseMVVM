@@ -1,9 +1,9 @@
-package com.gb.vale.androidcoursemvvm.ui.application
+package com.gb.vale.androidcoursemvvm.application
 
 import android.app.Application
 import androidx.room.Room
-import com.gb.vale.androidcoursemvvm.ui.db.ACMDataBase
-import com.gb.vale.androidcoursemvvm.ui.db.DefaultBaseDatosCallback
+import com.gb.vale.androidcoursemvvm.repository.db.ACMDataBase
+import com.gb.vale.androidcoursemvvm.repository.db.DefaultBaseDatosCallback
 
 
 class ACMApplication : Application() {
