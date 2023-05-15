@@ -2,6 +2,7 @@ package com.gb.vale.androidcoursemvvm.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.adapters.TabHostBindingAdapter
 import com.gb.vale.androidcoursemvvm.repository.exeption.GenericError
 import com.gb.vale.androidcoursemvvm.utils.toastGeneric
 
@@ -23,11 +24,15 @@ abstract class BaseActivity: AppCompatActivity() {
     private fun observerBaseActivity(){
         this.observerViewModel()
         this.getViewModel()?.errorLiveData?.observe(this){
-            if (it is GenericError){
-                this.toastGeneric(it.messageCustom)
-            }else{
-                this.toastGeneric("Ocurrio un error")
-            }
+            toastError(it)
+        }
+    }
+
+     fun toastError(it : Throwable){
+        if (it is GenericError){
+            this.toastGeneric(it.messageCustom)
+        }else{
+            this.toastGeneric("Ocurrio un error")
         }
     }
 }

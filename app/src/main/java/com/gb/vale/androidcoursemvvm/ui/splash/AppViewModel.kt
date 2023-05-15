@@ -9,7 +9,6 @@ import javax.inject.Inject
 @HiltViewModel
 class AppViewModel @Inject constructor(private val appUseCase : AppUseCase): BaseViewModel() {
 
-
     val successSplash = MutableLiveData<Boolean>()
 
     fun loadValidateLogin(){
