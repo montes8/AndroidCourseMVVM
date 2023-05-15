@@ -1,7 +1,6 @@
 package com.gb.vale.androidcoursemvvm.ui.splash
 
 import android.annotation.SuppressLint
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
