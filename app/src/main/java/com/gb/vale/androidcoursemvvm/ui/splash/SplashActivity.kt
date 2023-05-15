@@ -30,6 +30,8 @@ class SplashActivity : AppCompatActivity() {
         animation()
         appUseCase  = AppUseCase(this)
         viewModel = AppViewModel(appUseCase?:AppUseCase(this))
+
+
         Handler(Looper.getMainLooper()).postDelayed({
                 viewModel?.validateLogin()
             },2000
