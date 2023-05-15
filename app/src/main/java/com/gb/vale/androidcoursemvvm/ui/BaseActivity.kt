@@ -1,8 +1,9 @@
 package com.gb.vale.androidcoursemvvm.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.gb.vale.androidcoursemvvm.repository.exeption.GenericError
+import com.gb.vale.androidcoursemvvm.utils.toastGeneric
 
 
 abstract class BaseActivity: AppCompatActivity() {
@@ -22,7 +23,11 @@ abstract class BaseActivity: AppCompatActivity() {
     private fun observerBaseActivity(){
         this.observerViewModel()
         this.getViewModel()?.errorLiveData?.observe(this){
-            Log.d("error",it.message.toString())
+            if (it is GenericError){
+                this.toastGeneric(it.messageCustom)
+            }else{
+                this.toastGeneric("Ocurrio un error")
+            }
         }
     }
 }

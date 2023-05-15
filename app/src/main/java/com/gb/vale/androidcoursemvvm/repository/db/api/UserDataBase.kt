@@ -19,7 +19,4 @@ class UserDataBase @Inject constructor(private val iUserDao : UserDao): IUserDat
         val userDb = iUserDao.userLogin(user,pass)
         return userDb?.toUser()
     }
-
-
-
 }

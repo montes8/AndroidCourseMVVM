@@ -18,8 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class LoginActivity : BaseActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    private val viewModel: AppViewModel by viewModels()
-
+    private val viewModel: LoginViewModel by viewModels()
     companion object {
         fun newInstance(context: Context) =
             context.startActivity(Intent(context, LoginActivity::class.java))
@@ -37,23 +36,15 @@ class LoginActivity : BaseActivity() {
         binding.editPassLogin.addTextChangedListener {
             binding.editUserLayout.isErrorEnabled = false
         }
-        binding.btnLogin.setOnClickListener { if (validateLogin()) login() }
+
+        binding.btnLogin.setOnClickListener { if (validateLogin()) login()}
+
         binding.btnCreateRegister.setOnClickListener { FormActivity.newInstance(this) }
     }
 
     private fun validateLogin(): Boolean {
-        if (binding.editUserLogin.text.toString().isEmpty()) {
-            binding.editUserLayout.isErrorEnabled = true
-            binding.editUserLayout.error = "Necesitas ingresar el dato"
-            return false
-        }
-
-        if (binding.editPassLogin.text.toString().isEmpty()) {
-            binding.editPassLayout.isErrorEnabled = true
-            binding.editPassLayout.error = "Necesitas ingresar el dato"
-            return false
-        }
-        return true
+       return viewModel.validateLogin(binding.editUserLogin,binding.editPassLogin,
+       binding.editUserLayout,binding.editPassLayout)
     }
 
     private fun login() {
@@ -70,5 +61,4 @@ class LoginActivity : BaseActivity() {
             }?:toastGeneric("usuario incorrecto")
         }
     }
-
 }

@@ -20,6 +20,8 @@ class HomeActivity : BaseActivity() {
 
     private lateinit var binding: ActivityHomeBinding
     private val viewModel: AppViewModel by viewModels()
+    private val homeViewModel: HomeViewModel by viewModels()
+
 
     companion object {
         fun newInstance(context: Context) =
@@ -38,11 +40,11 @@ class HomeActivity : BaseActivity() {
             finish()
         }
 
-        viewModel.loadMovie()
+        homeViewModel.loadMovie()
     }
 
     override fun observerViewModel() {
-        viewModel.successMovie.observe(this){
+        homeViewModel.successMovie.observe(this){
             it?.let {
                 configMovie(it)
             }?:toastGeneric("Ocurrio un error en la peticion")
@@ -58,9 +60,7 @@ class HomeActivity : BaseActivity() {
                 super.onReady(youTubePlayer)
                 youTubePlayer.loadVideo(data.idMovie,0f)
             }
-
         })
-
     }
 
 

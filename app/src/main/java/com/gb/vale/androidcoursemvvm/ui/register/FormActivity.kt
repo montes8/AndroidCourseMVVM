@@ -7,7 +7,6 @@ import androidx.databinding.DataBindingUtil
 import com.gb.vale.androidcoursemvvm.R
 import com.gb.vale.androidcoursemvvm.databinding.ActivityFormBinding
 import com.gb.vale.androidcoursemvvm.ui.BaseActivity
-import com.gb.vale.androidcoursemvvm.ui.splash.AppViewModel
 import com.gb.vale.androidcoursemvvm.utils.toastGeneric
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -15,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class FormActivity : BaseActivity() {
 
     private lateinit var binding : ActivityFormBinding
-    private val viewModel: AppViewModel by viewModels()
+    private val viewModel: RegisterViewModel by viewModels()
 
     companion object {
         fun newInstance(context: Context) =
@@ -42,7 +41,6 @@ class FormActivity : BaseActivity() {
             }else{
                 toastGeneric("error al crear usuario")
             }
-        }
-    }
+        }}
 
 }
