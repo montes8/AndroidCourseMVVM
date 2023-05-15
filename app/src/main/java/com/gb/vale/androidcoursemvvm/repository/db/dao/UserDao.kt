@@ -2,7 +2,6 @@ package com.gb.vale.androidcoursemvvm.repository.db.dao
 
 import androidx.room.*
 import com.gb.vale.androidcoursemvvm.repository.db.entity.UserEntity
-
 @Dao
 interface UserDao {
 
@@ -17,7 +16,7 @@ interface UserDao {
     fun insert(user: UserEntity): Long?
 
     @Delete
-    fun deleteUser(usuarios: UserEntity):Int?
+    fun deleteUser(user: UserEntity):Int?
 
     @Update
     fun updateUser(user: UserEntity)
