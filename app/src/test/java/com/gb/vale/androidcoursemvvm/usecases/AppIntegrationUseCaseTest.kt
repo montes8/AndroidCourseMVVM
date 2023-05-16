@@ -1,8 +1,6 @@
 package com.gb.vale.androidcoursemvvm.usecases
 
-import com.gb.vale.androidcoursemvvm.model.User
-import com.gb.vale.androidcoursemvvm.utils.textUser
-import com.google.gson.Gson
+import com.gb.vale.androidcoursemvvm.repository.preferences.api.AppPreferences
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -11,13 +9,14 @@ import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class AppUseCaseIntegrationTest{
+class AppIntegrationUseCaseTest{
 
     @Mock
-    lateinit var appUseCase: AppUseCase
+    lateinit var appPreferences: AppPreferences
 
     @Test
     fun `validate token login correct`() {
+        val appUseCase = AppUseCase(appPreferences)
         Mockito.`when`(appUseCase.getToken()).
         thenReturn(true)
         val result =  appUseCase.getToken()
@@ -26,6 +25,7 @@ class AppUseCaseIntegrationTest{
 
     @Test
     fun `validate token not login incorrect`(){
+        val appUseCase = AppUseCase(appPreferences)
         Mockito.`when`(appUseCase.getToken()).thenReturn(false)
         val result =  appUseCase.getToken()
         Assert.assertEquals(false, result)

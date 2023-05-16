@@ -17,16 +17,16 @@ class AppPreferenceTest{
     @Test
     fun `validate token login correct`() {
         Mockito.`when`(appPreferences.getToken()).
-        thenReturn("true")
+        thenReturn(true)
         val result =  appPreferences.getToken()
         Assert.assertEquals(result, "true")
     }
 
     @Test
     fun `validate token not login incorrect`(){
-        Mockito.`when`(appPreferences.getToken()).thenReturn("true")
+        Mockito.`when`(appPreferences.getToken()).thenReturn(true)
         val result =  appPreferences.getToken()
-        Assert.assertEquals(false, result == "")
+        Assert.assertEquals(false, !result)
     }
 
 }

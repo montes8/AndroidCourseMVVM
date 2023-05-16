@@ -2,7 +2,7 @@ package com.gb.vale.androidcoursemvvm.usecases
 
 import com.gb.vale.androidcoursemvvm.model.User
 import com.gb.vale.androidcoursemvvm.usecases.repository.db.IUserDataBase
-import com.gb.vale.androidcoursemvvm.usecases.repository.db.preference.IAppPreferences
+import com.gb.vale.androidcoursemvvm.usecases.repository.preference.IAppPreferences
 import javax.inject.Inject
 
 class UseUseCase @Inject constructor(private val IAppPreference : IAppPreferences,

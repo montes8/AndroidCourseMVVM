@@ -1,8 +1,8 @@
-package com.gb.vale.androidcoursemvvm.usecases.repository.db.preference
+package com.gb.vale.androidcoursemvvm.usecases.repository.preference
 
 interface IAppPreferences {
     fun saveToken(value : String )
 
-    fun getToken() : String
+    fun getToken() : Boolean
 
 }
