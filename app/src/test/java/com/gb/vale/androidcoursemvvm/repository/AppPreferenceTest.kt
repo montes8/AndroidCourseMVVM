@@ -19,7 +19,7 @@ class AppPreferenceTest{
         Mockito.`when`(appPreferences.getToken()).
         thenReturn(true)
         val result =  appPreferences.getToken()
-        Assert.assertEquals(result, "true")
+        Assert.assertEquals(result, true)
     }
 
     @Test
