@@ -25,6 +25,12 @@ class UtilsTest {
     }
 
     @Test
+    fun `validation error format email`(){
+        val result = "emontesinos0812gmail.com".isEmailValid()
+        Assert.assertEquals(false,result)
+    }
+
+    @Test
     fun `validation text length`(){
         Assert.assertEquals("edi".lengthPlus1(),4)
     }

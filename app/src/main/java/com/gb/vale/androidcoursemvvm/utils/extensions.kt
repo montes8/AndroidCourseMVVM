@@ -37,10 +37,6 @@ fun String.lengthPlus1(): Int {
 }
 
 
-inline fun <reified T> readAndParseFileFromAssets(context: Context, fileName: String): T {
-    val jsonData = Gson()
-    val json = context.assets.open(fileName).bufferedReader().use {
-        it.readText()
-    }
-    return jsonData.fromJson(json, object : TypeToken<T>() {}.type)
+ suspend fun readFromAssets(context: Context, fileName: String): String {
+    return  context.assets.open(fileName).bufferedReader().use { it.readText() }
 }

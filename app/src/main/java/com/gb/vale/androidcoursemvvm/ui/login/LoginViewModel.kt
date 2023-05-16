@@ -4,15 +4,20 @@ package com.gb.vale.androidcoursemvvm.ui.login
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.gb.vale.androidcoursemvvm.model.User
+import com.gb.vale.androidcoursemvvm.repository.di.IoDispatcher
 import com.gb.vale.androidcoursemvvm.ui.BaseViewModel
 import com.gb.vale.androidcoursemvvm.usecases.UseUseCase
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(private val useUseCase : UseUseCase): BaseViewModel() {
+class LoginViewModel @Inject constructor(private val useUseCase : UseUseCase,
+                                         @IoDispatcher
+                                         private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO): BaseViewModel(ioDispatcher) {
 
 
     val successLogin: LiveData<User?> get() = _successLogin

@@ -1,6 +1,6 @@
 package com.gb.vale.androidcoursemvvm.usecases
 
-import com.gb.vale.androidcoursemvvm.usecases.preference.IAppPreferences
+import com.gb.vale.androidcoursemvvm.usecases.repository.db.preference.IAppPreferences
 import com.gb.vale.androidcoursemvvm.utils.EMPTY
 import javax.inject.Inject
 

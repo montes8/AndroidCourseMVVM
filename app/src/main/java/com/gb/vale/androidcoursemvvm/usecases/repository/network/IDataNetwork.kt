@@ -1,4 +1,4 @@
-package com.gb.vale.androidcoursemvvm.usecases.network
+package com.gb.vale.androidcoursemvvm.usecases.repository.db.network
 
 import com.gb.vale.androidcoursemvvm.model.MovieModel
 

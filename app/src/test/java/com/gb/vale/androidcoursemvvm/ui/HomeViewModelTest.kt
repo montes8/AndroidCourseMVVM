@@ -19,7 +19,7 @@ import org.mockito.junit.MockitoJUnitRunner
 
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
-class HomeModelTest{
+class HomeViewModelTest{
 
     @Mock
     lateinit var dataUseCase: DataUseCase

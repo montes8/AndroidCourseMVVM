@@ -14,7 +14,7 @@ import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
-class DataUseCaseTest{
+class DataUseCaseIntegrationTest{
 
     @Mock
     lateinit var dataNetwork: DataNetwork

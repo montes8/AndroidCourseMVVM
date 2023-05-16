@@ -3,7 +3,7 @@ package com.gb.vale.androidcoursemvvm.repository.network.api
 import com.gb.vale.androidcoursemvvm.model.MovieModel
 import com.gb.vale.androidcoursemvvm.repository.exeption.GenericError
 import com.gb.vale.androidcoursemvvm.repository.network.ACMService
-import com.gb.vale.androidcoursemvvm.usecases.network.IDataNetwork
+import com.gb.vale.androidcoursemvvm.usecases.repository.db.network.IDataNetwork
 import javax.inject.Inject
 
 class DataNetwork @Inject constructor(private val acmService : ACMService) : IDataNetwork {
