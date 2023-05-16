@@ -18,12 +18,30 @@
         <item name="android:windowDisablePreview">true</item>
     </style>
 
-    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+    <style name="TextInputLayoutEdit" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="colorControlActivated">@color/gray_140</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="colorControlNormal">@color/white</item>
-        <item name="colorAccent">@color/white</item>
-        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="boxCornerRadiusTopStart">20dp</item>
+        <item name="boxCornerRadiusTopEnd">20dp</item>
+        <item name="boxCornerRadiusBottomStart">20dp</item>
+        <item name="boxCornerRadiusBottomEnd">20dp</item>
     </style>
 
+    <style name="MaterialAlertDialogCenter" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitlePanelStyle">@style/Title.Panel.Center</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/Message.Center</item>
+    </style>
 
+    <style name="Message.Center" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="Title.Panel.Center" parent="MaterialAlertDialog.MaterialComponents.Title.Panel">
+        <item name="android:gravity">center_horizontal</item>
+    </style>
 
 </resources>

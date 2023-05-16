@@ -1,7 +1,21 @@
 <resources>
     <string name="app_name">AndroidCourseMVVM</string>
 
-    <string name="text_sub_title_splash">HAS TU PEDIDO AHORA</string>
-    <string name="test_number">FOOD MERIA</string>
+    <string name="text_sub_title_splash">EN HORA BUENA</string>
+    <string name="test_number">Curso Android</string>
     <string name="text_welcome">BIENVENIDO</string>
+    <string name="text_register">REGISTRO</string>
+    <string name="text_hint_user">Usuario</string>
+    <string name="text_hint_pass">Contraseña</string>
+    <string name="text_btn_login">Iniciar sesión</string>
+    <string name="text_btn_register">Crear cuenta</string>
+
+
+
+    <string name="text_logout">Cerrar Sesión</string>
+    <string name="text_logout_sub">Estas seguro que deseas cerrar sesión</string>
+    <string name="text_yes">SI</string>
+    <string name="text_not">NO</string>
+    <string name="text_test">text_prueba</string>
+    <string name="text_tb_home">Home</string>
 </resources>
