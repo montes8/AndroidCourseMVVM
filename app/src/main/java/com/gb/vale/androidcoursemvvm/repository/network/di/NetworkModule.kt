@@ -26,6 +26,8 @@ val networkModule = module {
     single { providerOkHttpClient(get(), get()) }
     single { providerRetrofit(getProperty(URL_BASE_NAME), get()) }
     single { providerApi(get()) }
+
+
     single <IDataNetwork>{ DataNetwork(get()) }
 
 }

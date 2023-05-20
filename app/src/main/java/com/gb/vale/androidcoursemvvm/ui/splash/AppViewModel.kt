@@ -8,8 +8,6 @@ class AppViewModel(private val appUseCase : AppUseCase): BaseViewModel() {
 
     val successSplash = MutableLiveData<Boolean>()
 
-    //private val appUseCase: AppUseCase by inject()
-
     fun loadValidateLogin(){
         execute {
              val response = appUseCase.getToken()

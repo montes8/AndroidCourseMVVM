@@ -23,7 +23,6 @@ class ApplicationCourse :Application(){
             modules(listOf(viewModelsModule,useCaseModule,networkModule,
                 dataBaseModule,preferencesModule))
             getKoin().setProperty(URL_BASE_NAME, URL_BASE)
-
         }
     }
 }

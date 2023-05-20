@@ -3,14 +3,12 @@ package com.gb.vale.androidcoursemvvm.ui.splash
 import android.annotation.SuppressLint
 import android.os.Handler
 import android.os.Looper
-import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.gb.vale.androidcoursemvvm.R
 import com.gb.vale.androidcoursemvvm.databinding.ActivitySplashBinding
 import com.gb.vale.androidcoursemvvm.ui.BaseActivity
 import com.gb.vale.androidcoursemvvm.ui.home.HomeActivity
 import com.gb.vale.androidcoursemvvm.ui.login.LoginActivity
-import com.gb.vale.androidcoursemvvm.ui.register.RegisterViewModel
 import com.gb.vale.androidcoursemvvm.utils.animationBottom
 import com.gb.vale.androidcoursemvvm.utils.animationTop
 import org.koin.androidx.viewmodel.ext.android.viewModel

@@ -11,7 +11,6 @@ open class BaseViewModel : ViewModel() {
     val errorLiveData  = MutableLiveData<Throwable>()
     val loadingLiveData  = MutableLiveData<Boolean>()
 
-
     fun execute(loading: Boolean = true,func:suspend ()->Unit){
         viewModelScope.launch(Dispatchers.IO){
            try {
