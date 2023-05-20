@@ -2,9 +2,8 @@ package com.gb.vale.androidcoursemvvm.repository.preferences.manager
 
 import android.content.SharedPreferences
 import com.gb.vale.androidcoursemvvm.utils.EMPTY
-import javax.inject.Inject
 
-class PreferencesManager @Inject constructor(private val preferences : SharedPreferences){
+class PreferencesManager(private val preferences : SharedPreferences){
 
     fun setValue(key : String, value : String){
         preferences.edit().putString(key,value).apply()

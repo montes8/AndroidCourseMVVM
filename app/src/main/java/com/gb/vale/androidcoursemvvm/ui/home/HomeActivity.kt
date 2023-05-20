@@ -11,16 +11,15 @@ import com.gb.vale.androidcoursemvvm.ui.BaseActivity
 import com.gb.vale.androidcoursemvvm.ui.BaseViewModel
 import com.gb.vale.androidcoursemvvm.ui.splash.AppViewModel
 import com.gb.vale.androidcoursemvvm.utils.toastGeneric
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
-import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class HomeActivity : BaseActivity() {
 
     private lateinit var binding: ActivityHomeBinding
-    private val viewModel: AppViewModel by viewModels()
-    private val homeViewModel: HomeViewModel by viewModels()
+    private val viewModel: AppViewModel by viewModel(clazz = AppViewModel::class)
+    private val homeViewModel: HomeViewModel by viewModel(clazz = HomeViewModel::class)
 
 
     companion object {

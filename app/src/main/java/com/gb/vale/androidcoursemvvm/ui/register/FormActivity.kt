@@ -2,19 +2,17 @@ package com.gb.vale.androidcoursemvvm.ui.register
 
 import android.content.Context
 import android.content.Intent
-import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.gb.vale.androidcoursemvvm.R
 import com.gb.vale.androidcoursemvvm.databinding.ActivityFormBinding
 import com.gb.vale.androidcoursemvvm.ui.BaseActivity
 import com.gb.vale.androidcoursemvvm.utils.toastGeneric
-import dagger.hilt.android.AndroidEntryPoint
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-@AndroidEntryPoint
 class FormActivity : BaseActivity() {
 
     private lateinit var binding : ActivityFormBinding
-    private val viewModel: RegisterViewModel by viewModels()
+    private val viewModel: RegisterViewModel by viewModel(clazz = RegisterViewModel::class)
 
     companion object {
         fun newInstance(context: Context) =

@@ -4,9 +4,8 @@ import com.gb.vale.androidcoursemvvm.model.User
 import com.gb.vale.androidcoursemvvm.repository.db.dao.UserDao
 import com.gb.vale.androidcoursemvvm.repository.db.entity.UserEntity
 import com.gb.vale.androidcoursemvvm.usecases.db.IUserDataBase
-import javax.inject.Inject
 
-class UserDataBase @Inject constructor(private val iUserDao : UserDao): IUserDataBase {
+class UserDataBase(private val iUserDao : UserDao): IUserDataBase {
 
     override
     fun insertUserDb(user : String, pass : String):Boolean{

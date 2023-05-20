@@ -8,11 +8,8 @@ import com.gb.vale.androidcoursemvvm.ui.BaseViewModel
 import com.gb.vale.androidcoursemvvm.usecases.UseUseCase
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 
-@HiltViewModel
-class LoginViewModel @Inject constructor(private val useUseCase : UseUseCase): BaseViewModel() {
+class LoginViewModel(private val useUseCase : UseUseCase): BaseViewModel() {
 
 
     val successLogin: LiveData<User?> get() = _successLogin

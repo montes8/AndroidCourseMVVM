@@ -10,15 +10,14 @@ import com.gb.vale.androidcoursemvvm.databinding.ActivityLoginBinding
 import com.gb.vale.androidcoursemvvm.ui.BaseActivity
 import com.gb.vale.androidcoursemvvm.ui.home.HomeActivity
 import com.gb.vale.androidcoursemvvm.ui.register.FormActivity
-import com.gb.vale.androidcoursemvvm.ui.splash.AppViewModel
 import com.gb.vale.androidcoursemvvm.utils.toastGeneric
-import dagger.hilt.android.AndroidEntryPoint
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-@AndroidEntryPoint
+
 class LoginActivity : BaseActivity() {
 
     private lateinit var binding: ActivityLoginBinding
-    private val viewModel: LoginViewModel by viewModels()
+    private val viewModel: LoginViewModel by viewModel(clazz = LoginViewModel::class)
     companion object {
         fun newInstance(context: Context) =
             context.startActivity(Intent(context, LoginActivity::class.java))

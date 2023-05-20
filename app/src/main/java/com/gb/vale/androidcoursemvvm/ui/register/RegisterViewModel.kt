@@ -5,11 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.gb.vale.androidcoursemvvm.ui.BaseViewModel
 import com.gb.vale.androidcoursemvvm.usecases.UseUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 
-@HiltViewModel
-class RegisterViewModel @Inject constructor(private val useUseCase : UseUseCase): BaseViewModel() {
+class RegisterViewModel(private val useUseCase : UseUseCase): BaseViewModel() {
 
 
     val successRegister: LiveData<Boolean> get() = _successRegister

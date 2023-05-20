@@ -8,19 +8,18 @@ import androidx.databinding.DataBindingUtil
 import com.gb.vale.androidcoursemvvm.R
 import com.gb.vale.androidcoursemvvm.databinding.ActivitySplashBinding
 import com.gb.vale.androidcoursemvvm.ui.BaseActivity
-import com.gb.vale.androidcoursemvvm.ui.BaseViewModel
 import com.gb.vale.androidcoursemvvm.ui.home.HomeActivity
 import com.gb.vale.androidcoursemvvm.ui.login.LoginActivity
+import com.gb.vale.androidcoursemvvm.ui.register.RegisterViewModel
 import com.gb.vale.androidcoursemvvm.utils.animationBottom
 import com.gb.vale.androidcoursemvvm.utils.animationTop
-import dagger.hilt.android.AndroidEntryPoint
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 @SuppressLint("CustomSplashScreen")
-@AndroidEntryPoint
 class SplashActivity : BaseActivity() {
 
     private lateinit var binding: ActivitySplashBinding
-    private val viewModel: AppViewModel by viewModels()
+    private val viewModel: AppViewModel by viewModel(clazz = AppViewModel::class)
     var value = false
 
     override fun getBinding() {
