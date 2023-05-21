@@ -23,7 +23,6 @@ import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -106,19 +105,19 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideACMService(retrofit: Retrofit) = retrofit.create(ACMService::class.java)
+    fun provideACMService(retrofit: Retrofit) : ACMService = retrofit.create(ACMService::class.java)
 
 
     @Singleton
     @Provides
-    fun providerHeaderInterceptor(@ApplicationContext context: Context): Interceptor {
-        return ApiInterceptor(context)
+    fun providerHeaderInterceptor(): Interceptor {
+        return ApiInterceptor()
     }
 
 
 }
 
-class ApiInterceptor @Inject constructor(private val context: Context) : Interceptor {
+class ApiInterceptor @Inject constructor() : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
         val builder = request.newBuilder()

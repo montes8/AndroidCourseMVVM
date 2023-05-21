@@ -28,7 +28,7 @@ abstract class BaseActivity: AppCompatActivity() {
         }
     }
 
-     fun toastError(it : Throwable){
+     private fun toastError(it : Throwable){
         if (it is GenericError){
             this.toastGeneric(it.messageCustom)
         }else{

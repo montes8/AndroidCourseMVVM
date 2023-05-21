@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 open class BaseViewModel : ViewModel() {
 
     val errorLiveData  = MutableLiveData<Throwable>()
-    val loadingLiveData  = MutableLiveData<Boolean>()
+    private val loadingLiveData  = MutableLiveData<Boolean>()
 
 
     fun execute(loading: Boolean = true,func:suspend ()->Unit){
