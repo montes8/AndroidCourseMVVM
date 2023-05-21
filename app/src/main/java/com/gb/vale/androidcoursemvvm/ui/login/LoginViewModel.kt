@@ -26,9 +26,8 @@ class LoginViewModel @Inject constructor(private val useUseCase : UseUseCase): B
         }
     }
 
-     fun validateLogin(editUserLogin: TextInputEditText, editPass: TextInputEditText,
-                              editUserLoginL : TextInputLayout, editUserPassL : TextInputLayout
-    ): Boolean {
+     fun validateLogin(editUserLogin: TextInputEditText, editPass: TextInputEditText, editUserLoginL
+     : TextInputLayout, editUserPassL : TextInputLayout): Boolean {
         if (editUserLogin.text.toString().isEmpty()) {
             editUserLoginL.isErrorEnabled = true
             editUserLoginL.error = "Necesitas ingresar el dato"
