@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import com.gb.vale.androidcoursemvvm.R
 import com.gb.vale.androidcoursemvvm.databinding.ActivitySplashBinding
 import com.gb.vale.androidcoursemvvm.ui.BaseActivity
-import com.gb.vale.androidcoursemvvm.ui.BaseViewModel
 import com.gb.vale.androidcoursemvvm.ui.home.HomeActivity
 import com.gb.vale.androidcoursemvvm.ui.login.LoginActivity
 import com.gb.vale.androidcoursemvvm.utils.animationBottom
