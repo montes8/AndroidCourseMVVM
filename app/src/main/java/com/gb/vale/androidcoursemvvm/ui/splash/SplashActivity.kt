@@ -9,43 +9,32 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.gb.vale.androidcoursemvvm.R
 import com.gb.vale.androidcoursemvvm.databinding.ActivitySplashBinding
-import com.gb.vale.androidcoursemvvm.ui.AppViewModel
 import com.gb.vale.androidcoursemvvm.ui.home.HomeActivity
 import com.gb.vale.androidcoursemvvm.ui.login.LoginActivity
-import com.gb.vale.androidcoursemvvm.usecase.AppUseCase
 
 @SuppressLint("CustomSplashScreen")
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : AppCompatActivity(),ISplashPresenter {
 
     private lateinit var binding : ActivitySplashBinding
-    private var appUseCase : AppUseCase? = null
-    private var viewModel : AppViewModel? = null
+    private lateinit var presenter : SplashPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
         binding.lifecycleOwner = this
+        presenter = SplashPresenter(this,this)
         //animaciones
         animation()
-        appUseCase  = AppUseCase(this)
-        viewModel = AppViewModel(appUseCase?:AppUseCase(this))
-
-
-        Handler(Looper.getMainLooper()).postDelayed({
-                viewModel?.validateLogin()
-            },2000
-        )
-
-
-        //observador
-        viewModel?.successSplash?.observe(this){
-            if (it) HomeActivity.newInstance(this) else LoginActivity.newInstance(this)
-            finish()
-        }
+        Handler(Looper.getMainLooper()).postDelayed({ presenter.validateLogin() },2000)
     }
     private fun animation(){
         binding.lnBannerTop.animation = AnimationUtils.loadAnimation(this, R.anim.ani_top)
         binding.lnBannerBottom.animation = AnimationUtils.loadAnimation(this, R.anim.ani_bottom)
 
+    }
+
+    override fun validateLogin(valid: Boolean) {
+        if (valid) HomeActivity.newInstance(this) else LoginActivity.newInstance(this)
+        finish()
     }
 }

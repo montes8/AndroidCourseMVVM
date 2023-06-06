@@ -10,18 +10,15 @@ import androidx.databinding.DataBindingUtil
 import com.gb.vale.androidcoursemvvm.R
 import com.gb.vale.androidcoursemvvm.databinding.ActivityHomeBinding
 import com.gb.vale.androidcoursemvvm.repository.network.MovieModel
-import com.gb.vale.androidcoursemvvm.ui.AppViewModel
-import com.gb.vale.androidcoursemvvm.usecase.AppUseCase
 import com.gb.vale.androidcoursemvvm.utils.dialogSimple
 import com.gb.vale.androidcoursemvvm.utils.toastGeneric
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(),IHomePresenter {
 
     private lateinit var binding: ActivityHomeBinding
-    private var appUseCase : AppUseCase? = null
-    private var viewModel : AppViewModel? = null
+    private lateinit var presenter : HomePresenter
     companion object{
         fun newInstance(context: Context) = context.startActivity(Intent(context, HomeActivity::class.java))
     }
@@ -30,26 +27,15 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home)
         binding.lifecycleOwner = this
+        presenter = HomePresenter(this,this)
         lifecycle.addObserver(binding.youtubePlayerView)
-        appUseCase  = AppUseCase(this)
-        viewModel = AppViewModel(appUseCase?:AppUseCase(this))
         //simulamos cerrar sesion
         binding.imgTbLogout.setOnClickListener {
-            dialogSimple{
-                if (it){
-                    viewModel?.logout()
-                    finish()
-                }}
+            dialogSimple{ if (it){
+                presenter.logout()
+                finish() }}
         }
-
-        viewModel?.loadMovie()
-
-        viewModel?.successMovie?.observe(this){
-            it?.let {
-                loadMovie(it)
-            }?:toastGeneric("Ocurrio un error en la peticion")
-        }
-
+        presenter.loadMovie()
     }
 
     @SuppressLint("KotlinNullnessAnnotation")
@@ -62,5 +48,13 @@ class HomeActivity : AppCompatActivity() {
                 videoId?.let { youTubePlayer.loadVideo(it, 0f) }
             }
         })
+    }
+
+    override fun successDataMovie(model: MovieModel) {
+        loadMovie(model)
+    }
+
+    override fun errorDataMovie() {
+        toastGeneric("Ocurrio un error en la peticion")
     }
 }
