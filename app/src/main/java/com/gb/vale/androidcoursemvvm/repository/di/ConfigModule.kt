@@ -8,10 +8,7 @@ import com.gb.vale.androidcoursemvvm.BuildConfig
 import com.gb.vale.androidcoursemvvm.application.ApplicationCourse
 import com.gb.vale.androidcoursemvvm.repository.db.ACMDataBase
 import com.gb.vale.androidcoursemvvm.repository.network.ACMService
-import com.gb.vale.androidcoursemvvm.utils.CONTENT_TYPE
-import com.gb.vale.androidcoursemvvm.utils.MY_CONTENT_TYPE
-import com.gb.vale.androidcoursemvvm.utils.MY_TIME_ON
-import com.gb.vale.androidcoursemvvm.utils.URL_BASE
+import com.gb.vale.androidcoursemvvm.utils.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,7 +31,7 @@ class SharedPreferencesModule {
     @Singleton
     @Provides
     fun providerSharedPreference(@ApplicationContext context: Context): SharedPreferences =
-        context.getSharedPreferences("ACMPreferences", AppCompatActivity.MODE_PRIVATE)
+        context.getSharedPreferences(KEY_PREFERENCE, AppCompatActivity.MODE_PRIVATE)
 
 }
 
