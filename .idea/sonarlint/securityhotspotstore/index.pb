@@ -1,0 +1,19 @@
+
+€
+Papp/src/main/java/com/gb/vale/androidcoursemvvm/ui/register/RegisterViewModel.kt,d/3/d3d000c62b2a69adb04af1c9dad136a230818f02
+U
+%app/src/main/res/xml/backup_rules.xml,e/0/e0bc1eda8e2c689cb79d5b6e5cfd11385f06c2b8
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+X
+(gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+w
+Gapp/src/main/java/com/gb/vale/androidcoursemvvm/usecases/DataUseCase.kt,3/1/31eda6fc1dfd2e77bae531aa478834207d354840
+x
+Happ/src/main/java/com/gb/vale/androidcoursemvvm/ui/home/HomeViewModel.kt,6/e/6e0115b983dd4d385d11fc35063d8ea5732fdb62
+{
+Kapp/src/main/java/com/gb/vale/androidcoursemvvm/ui/register/FormActivity.kt,c/a/ca3cee8222e9da7d4bd3c2cafbe71288abe34f6f
+r
+Bapp/src/main/java/com/gb/vale/androidcoursemvvm/ui/BaseActivity.kt,1/1/1114d412fb0b6ece1a1577780d42c7d114ec3052
+}
+Mapp/src/main/java/com/gb/vale/androidcoursemvvm/repository/di/ConfigModule.kt,1/1/11f35dd4cb07ee1c7455afd758a9dff413ae6f66
