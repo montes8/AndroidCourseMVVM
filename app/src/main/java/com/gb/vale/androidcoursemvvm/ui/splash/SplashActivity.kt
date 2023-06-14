@@ -1,51 +1,46 @@
 package com.gb.vale.androidcoursemvvm.ui.splash
 
 import android.annotation.SuppressLint
-import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.animation.AnimationUtils
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.gb.vale.androidcoursemvvm.R
 import com.gb.vale.androidcoursemvvm.databinding.ActivitySplashBinding
-import com.gb.vale.androidcoursemvvm.ui.AppViewModel
+import com.gb.vale.androidcoursemvvm.ui.BaseActivity
 import com.gb.vale.androidcoursemvvm.ui.home.HomeActivity
 import com.gb.vale.androidcoursemvvm.ui.login.LoginActivity
-import com.gb.vale.androidcoursemvvm.usecase.AppUseCase
+import com.gb.vale.androidcoursemvvm.utils.animationBottom
+import com.gb.vale.androidcoursemvvm.utils.animationTop
+import dagger.hilt.android.AndroidEntryPoint
 
 @SuppressLint("CustomSplashScreen")
-class SplashActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class SplashActivity : BaseActivity() {
 
-    private lateinit var binding : ActivitySplashBinding
-    private var appUseCase : AppUseCase? = null
-    private var viewModel : AppViewModel? = null
+    private lateinit var binding: ActivitySplashBinding
+    private val viewModel: AppViewModel by viewModels()
+    var value = false
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun getBinding() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_splash)
         binding.lifecycleOwner = this
-        //animaciones
-        animation()
-        appUseCase  = AppUseCase(this)
-        viewModel = AppViewModel(appUseCase?:AppUseCase(this))
-
-
-        Handler(Looper.getMainLooper()).postDelayed({
-                viewModel?.validateLogin()
-            },2000
-        )
-
-
-        //observador
-        viewModel?.successSplash?.observe(this){
-            if (it) HomeActivity.newInstance(this) else LoginActivity.newInstance(this)
-            finish()
-        }
     }
-    private fun animation(){
-        binding.lnBannerTop.animation = AnimationUtils.loadAnimation(this, R.anim.ani_top)
-        binding.lnBannerBottom.animation = AnimationUtils.loadAnimation(this, R.anim.ani_bottom)
 
+    override fun setView() {
+        binding.lnBannerTop.animationTop()
+        binding.lnBannerBottom.animationBottom()
+        Handler(Looper.getMainLooper()).postDelayed({
+            viewModel.loadValidateLogin()
+        }, 2000)
+    }
+
+    override fun observerViewModel() {
+        viewModel.successSplash.observe(this) {
+            it?.let {
+                if (it) HomeActivity.newInstance(this) else LoginActivity.newInstance(this)
+                finish()
+            }
+        }
     }
 }

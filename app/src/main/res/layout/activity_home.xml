@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
                     android:contentDescription="@null"
-                    android:text="@string/text_title_home"
+                    android:text="@string/text_tb_home"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
             android:id="@+id/youtubePlayerView" />
 
         <TextView
-            android:text="@string/text_test"
+            tools:text="@string/text_test"
             android:layout_width="@dimen/size_0"
             android:layout_height="wrap_content"
             android:id="@+id/text_title_banner_one"
@@ -81,7 +81,7 @@
             android:layout_margin="@dimen/size_20"
             app:layout_constraintTop_toBottomOf="@+id/youtubePlayerView"/>
         <TextView
-            android:text="@string/text_test"
+            tools:text="@string/text_test"
             android:layout_width="@dimen/size_0"
             android:layout_height="wrap_content"
             android:gravity="center"

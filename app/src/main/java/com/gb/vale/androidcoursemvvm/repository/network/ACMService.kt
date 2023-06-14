@@ -1,18 +1,11 @@
 package com.gb.vale.androidcoursemvvm.repository.network
 
-import retrofit2.Call
+import com.gb.vale.androidcoursemvvm.repository.network.response.MovieResponse
+import retrofit2.Response
 import retrofit2.http.GET
 
-
 interface ACMService {
-
     @GET("api/user/loadMovi")
-    fun loadMovie(): Call<MovieModel?>
+     suspend fun loadMovie(): Response<MovieResponse>
 
-
-    companion object {
-        fun create(): ACMService {
-            return  RetrofitCreator.getInstanceRetrofit().create(ACMService::class.java)
-        }
-    }
 }
