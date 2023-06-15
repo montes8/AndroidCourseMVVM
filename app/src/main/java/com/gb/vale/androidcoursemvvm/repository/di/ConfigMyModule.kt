@@ -3,9 +3,9 @@ package com.gb.vale.androidcoursemvvm.repository.di
 import com.gb.vale.androidcoursemvvm.repository.db.api.UserDataBase
 import com.gb.vale.androidcoursemvvm.repository.network.api.DataNetwork
 import com.gb.vale.androidcoursemvvm.repository.preferences.api.AppPreferences
-import com.gb.vale.androidcoursemvvm.usecases.db.IUserDataBase
-import com.gb.vale.androidcoursemvvm.usecases.network.IDataNetwork
-import com.gb.vale.androidcoursemvvm.usecases.preference.IAppPreferences
+import com.gb.vale.androidcoursemvvm.usecases.repository.db.IUserDataBase
+import com.gb.vale.androidcoursemvvm.usecases.repository.db.network.IDataNetwork
+import com.gb.vale.androidcoursemvvm.usecases.repository.preference.IAppPreferences
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

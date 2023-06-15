@@ -3,7 +3,7 @@ package com.gb.vale.androidcoursemvvm.repository.db.api
 import com.gb.vale.androidcoursemvvm.model.User
 import com.gb.vale.androidcoursemvvm.repository.db.dao.UserDao
 import com.gb.vale.androidcoursemvvm.repository.db.entity.UserEntity
-import com.gb.vale.androidcoursemvvm.usecases.db.IUserDataBase
+import com.gb.vale.androidcoursemvvm.usecases.repository.db.IUserDataBase
 import javax.inject.Inject
 
 class UserDataBase @Inject constructor(private val iUserDao : UserDao): IUserDataBase {
