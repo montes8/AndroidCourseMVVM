@@ -1,5 +1,9 @@
 name: Build
-on: [push]
+on:
+  push:
+    branches:
+      - main # or the name of your main branch
+      - prueba_epidata
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
