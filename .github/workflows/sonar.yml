@@ -31,4 +31,4 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
       - name: Build and analyze
-        run: ./gradlew sonarqube -x processDebugAndroidTestResources -x compileDesarrolloDebugUnitTestKotlin -x kaptDebugAndroidTestKotlin --info
+        run: ./gradlew sonarqube
