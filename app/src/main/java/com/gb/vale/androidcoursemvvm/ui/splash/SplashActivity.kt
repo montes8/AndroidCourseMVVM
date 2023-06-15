@@ -8,9 +8,9 @@ import androidx.databinding.DataBindingUtil
 import com.gb.vale.androidcoursemvvm.R
 import com.gb.vale.androidcoursemvvm.databinding.ActivitySplashBinding
 import com.gb.vale.androidcoursemvvm.ui.BaseActivity
-import com.gb.vale.androidcoursemvvm.ui.BaseViewModel
 import com.gb.vale.androidcoursemvvm.ui.home.HomeActivity
 import com.gb.vale.androidcoursemvvm.ui.login.LoginActivity
+import com.gb.vale.androidcoursemvvm.utils.MY_DELAY_SPLASH
 import com.gb.vale.androidcoursemvvm.utils.animationBottom
 import com.gb.vale.androidcoursemvvm.utils.animationTop
 import dagger.hilt.android.AndroidEntryPoint
@@ -33,7 +33,7 @@ class SplashActivity : BaseActivity() {
         binding.lnBannerBottom.animationBottom()
         Handler(Looper.getMainLooper()).postDelayed({
             viewModel.loadValidateLogin()
-        }, 2000)
+        }, MY_DELAY_SPLASH)
     }
 
     override fun observerViewModel() {

@@ -10,7 +10,6 @@ import com.gb.vale.androidcoursemvvm.databinding.ActivityLoginBinding
 import com.gb.vale.androidcoursemvvm.ui.BaseActivity
 import com.gb.vale.androidcoursemvvm.ui.home.HomeActivity
 import com.gb.vale.androidcoursemvvm.ui.register.FormActivity
-import com.gb.vale.androidcoursemvvm.ui.splash.AppViewModel
 import com.gb.vale.androidcoursemvvm.utils.toastGeneric
 import dagger.hilt.android.AndroidEntryPoint
 

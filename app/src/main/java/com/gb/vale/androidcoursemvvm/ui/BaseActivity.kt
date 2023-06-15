@@ -2,10 +2,8 @@ package com.gb.vale.androidcoursemvvm.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.adapters.TabHostBindingAdapter
 import com.gb.vale.androidcoursemvvm.repository.exeption.GenericError
 import com.gb.vale.androidcoursemvvm.utils.toastGeneric
-
 
 abstract class BaseActivity: AppCompatActivity() {
 
@@ -28,7 +26,7 @@ abstract class BaseActivity: AppCompatActivity() {
         }
     }
 
-     fun toastError(it : Throwable){
+     private fun toastError(it : Throwable){
         if (it is GenericError){
             this.toastGeneric(it.messageCustom)
         }else{
