@@ -17,7 +17,6 @@ interface UserDao {
     @Query("select * from UserEntity where name = :name and pass = :pass")
     fun userLogin(name:String,pass:String):UserEntity?
 
-
     @Insert
     fun insert(user: UserEntity): Long?
 
