@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main # or the name of your main branch
-      - prueba_epidata
+      - ci_sonar
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
