@@ -30,7 +30,6 @@ sonarqube {
         property "sonar.sourceEncoding", "UTF-8"
         property "sonar.sources", "src/main/java"
         property "sonar.login", "admin"
-        property "sonar.java.jdkHome", "/Library/Java/JavaVirtualMachines/jdk12.0.2.jdk/Contents/Home"
         property "sonar.password", "tayler"
         property "sonar.exclusions", '**/*Test*/**,' +
                 '*.json,' +
