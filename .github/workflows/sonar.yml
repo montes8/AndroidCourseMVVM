@@ -3,13 +3,12 @@ on:
   push:
     branches:
       - main # or the name of your main branch
-      - prueba_epidata
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
   build:
     name: Build
-    runs-on: [self-hosted, Windows, X64, sonar]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -32,7 +31,7 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle
       - name: Build and analyze
         env:
-          GITHUB_TOKEN: ${{ "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" }}
-          SONAR_TOKEN: ${{ "squ_d5868a9dcd15dbdf8662bfdf5a65708730c535cd" }}
-          SONAR_HOST_URL: ${{ "http://localhost:9000" }}
-        run: ./gradlew sonarqube -x processDebugAndroidTestResources -x compileDesarrolloDebugUnitTestKotlin -x kaptDebugAndroidTestKotlin --info
+          GITHUB_TOKEN: ${{ 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 }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ squ_d5868a9dcd15dbdf8662bfdf5a65708730c535cd }}
+          SONAR_HOST_URL: ${{ http://localhost:9000 }}
+        run: ./gradlew build sonarqube --info
