@@ -30,7 +30,7 @@ sonarqube {
         property "sonar.sourceEncoding", "UTF-8"
         property "sonar.sources", "src/main/java"
         property "sonar.login", "admin"
-        property "sonar.password", "tayler0812"
+        property "sonar.password", "tayler"
         property "sonar.exclusions", '**/*Test*/**,' +
                 '*.json,' +
                 '**/*test*/**,' +
@@ -40,6 +40,7 @@ sonarqube {
 }
 
 //./gradlew sonarqube
+//./gradlew detekt
 allprojects {
     repositories {
         google()
