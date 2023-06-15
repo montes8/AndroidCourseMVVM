@@ -1,34 +1,38 @@
-name: Android Sonar CI
-on: [push]
+name: Build
+on:
+  push:
+    branches:
+      - master # or the name of your main branch
+      - prueba_epidata
   pull_request:
     types: [opened, synchronize, reopened]
-
 jobs:
-  sonarqube:
-    runs-on: ubuntu-latest
+  build:
+    name: Build
+    runs-on: [self-hosted, Windows, X64, sonar]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-            - name: Set up JDK 11
-              uses: actions/setup-java@v1
-              with:
-                java-version: 11
-            - name: Cache SonarQube packages
-              uses: actions/cache@v1
-              with:
-                path: ~/.sonar/cache
-                key: ${{ runner.os }}-sonar
-                restore-keys: ${{ runner.os }}-sonar
-            - name: Cache Gradle packages
-              uses: actions/cache@v1
-              with:
-                path: ~/.gradle/caches
-                key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-                restore-keys: ${{ runner.os }}-gradle
-      - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@master
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Cache SonarQube packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Cache Gradle packages
+        uses: actions/cache@v1
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+          restore-keys: ${{ runner.os }}-gradle
+      - name: Build and analyze
         env:
-          SONAR_TOKEN: ${{ squ_04c676ab016611180e77e091902f2c1b22896115 }}
+          GITHUB_TOKEN: ${{ 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 }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ squ_d5868a9dcd15dbdf8662bfdf5a65708730c535cd }}
           SONAR_HOST_URL: ${{ http://localhost:9000 }}
         run: ./gradlew sonarqube -x processDebugAndroidTestResources -x compileDesarrolloDebugUnitTestKotlin -x kaptDebugAndroidTestKotlin --info
