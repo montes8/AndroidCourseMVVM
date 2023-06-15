@@ -18,6 +18,7 @@ buildscript {
 }
 
 sonarqube {
+    androidVariant 'debug'
     properties {
         property "sonar.projectName", "AndroidCourseMVVM"
         property "sonar.projectKey", "androidcoursemvvm"
