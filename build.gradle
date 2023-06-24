@@ -7,6 +7,9 @@ buildscript {
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
+        maven {
+            url 'lib'          // For the DexGuard plugin.
+        }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.3"
@@ -14,6 +17,7 @@ buildscript {
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.35'
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.1.1"
         classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.18.1"
+        classpath 'com.guardsquare:dexguard-gradle-plugin:+'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

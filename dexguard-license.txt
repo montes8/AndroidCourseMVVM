@@ -1,0 +1,10 @@
+# DexGuard license file
+licensee              = AndroidCourseMVVM
+contact               =  
+contactEmail          = emontesinos812@gmail.com
+product               = DexGuard
+version               = 7.*,8.*,9.*
+package               = com.gb.vale.androidcoursemvvm
+expiryDate            = 2025-12-12
+maintenanceExpiryDate = 2025-12-12
+key                   = 024f645b679b83fec8aacd5c7e5cfb45130425858bfd3d9a175d02e6d878e4720839b29c4a47cd84fb6b5db0842390d37a6f04f819f4a98f362c3d626655edc6

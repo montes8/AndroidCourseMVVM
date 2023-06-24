@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'dexguard'
 }
 
 
@@ -112,4 +113,19 @@ apply plugin: "io.gitlab.arturbosch.detekt"
 
 kapt {
     correctErrorTypes true
+}
+
+dexguard {
+    path = '../'
+    license = '../dexguard-license.txt'
+    configurations {
+//        release {
+//            defaultConfiguration 'dexguard-release.pro'
+//        }
+
+//        debug {
+//            defaultConfiguration 'dexguard-release.pro'
+//        }
+
+    }
 }

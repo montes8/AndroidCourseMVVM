@@ -3,7 +3,7 @@ package com.gb.vale.androidcoursemvvm.utils
 
 const val EMPTY = ""
 const val PREFERENCE_TOKEN = "PREFERENCE_TOKEN"
-const val URL_BASE = "https://431a-2800-200-e3c0-1123-5d9-8dae-1dd2-5b7d.ngrok-free.app/"
+const val URL_BASE = "https://be36-2800-200-e3c0-1123-48ca-4d2e-e5c4-a532.ngrok-free.app/"
 const val MY_TIME_ON = 60L
 const val MY_DELAY_SPLASH = 2000L
 
