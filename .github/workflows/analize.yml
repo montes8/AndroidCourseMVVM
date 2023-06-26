@@ -33,6 +33,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ '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' }}
           SONAR_TOKEN: ${{ 'squ_d5868a9dcd15dbdf8662bfdf5a65708730c535cd' }}
-          SONAR_HOST_URL: ${{ 'http://localhost:9000' }}
+          SONAR_HOST_URL: ${{ 'https://fc01-2800-200-e3c0-1123-a5c4-e004-750f-31a7.ngrok-free.app' }}
         run: ./gradlew build sonarqube --info
 
