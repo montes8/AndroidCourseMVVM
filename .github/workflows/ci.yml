@@ -22,5 +22,6 @@ jobs:
           export TF_API_KEY=${{ 'ae06451c1fcfd2076ae003ac19c5ed64f2f9f6c8' }}
 
           ./gradlew uploadArchives
+          cd AndroidCourseMVVM
           ./gradlew testfairyDebug
         shell: bash
