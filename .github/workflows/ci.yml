@@ -19,7 +19,7 @@ jobs:
 
       - name: Build and test
         run: |
-          export TF_API_KEY=${{ secrets.TF_API_KEY }}
+          export TF_API_KEY=${{ 'ae06451c1fcfd2076ae003ac19c5ed64f2f9f6c8' }}
 
           ./gradlew uploadArchives
           ./gradlew testfairyDebug
