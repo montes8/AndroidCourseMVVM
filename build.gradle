@@ -41,7 +41,6 @@ sonarqube {
 
 //./gradlew sonarqube
 //./gradlew detekt
-//./gradlew testfairyDebug
 allprojects {
     repositories {
         google()
