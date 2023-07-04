@@ -16,12 +16,12 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: gradle
-
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
       - name: Build and test
         run: |
           export TF_API_KEY=${{ 'ae06451c1fcfd2076ae003ac19c5ed64f2f9f6c8' }}
 
           ./gradlew uploadArchives
-          cd AndroidCourseMVVM
           ./gradlew testfairyDebug
         shell: bash
