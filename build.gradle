@@ -1,12 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 apply plugin: "org.sonarqube"
 apply plugin: "io.gitlab.arturbosch.detekt"
+apply plugin: 'testfairy'
 buildscript {
     ext.kotlin_version = "1.6.10"
     repositories {
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
+        maven { url 'https://www.testfairy.com/maven' }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:4.1.3"
@@ -14,6 +16,7 @@ buildscript {
         classpath 'com.google.dagger:hilt-android-gradle-plugin:2.35'
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.1.1"
         classpath "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.18.1"
+        classpath 'com.testfairy.plugins.gradle:testfairy:3.4'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -39,8 +42,14 @@ sonarqube {
     }
 }
 
+testfairyConfig {
+    apiKey "ea40483ccc891cfd0494e000efaf91b6a91391ff"
+    uploadProguardMapping true
+}
+
 //./gradlew sonarqube
 //./gradlew detekt
+//./gradlew testfairyDebug
 allprojects {
     repositories {
         google()
