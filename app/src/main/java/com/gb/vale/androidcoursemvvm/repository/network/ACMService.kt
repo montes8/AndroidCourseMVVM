@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface ACMService {
 
-    @GET("api/user/loadMovi")
+    @GET("service/user/loadMovi")
     fun loadMovie(): Call<MovieModel?>
 
 
