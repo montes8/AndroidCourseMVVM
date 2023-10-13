@@ -2,6 +2,7 @@ package com.gb.vale.androidcoursemvvm.repository.di
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.gb.vale.androidcoursemvvm.BuildConfig
@@ -16,6 +17,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import okhttp3.Headers
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -123,7 +125,13 @@ class ApiInterceptor @Inject constructor() : Interceptor {
         val builder = request.newBuilder()
             .addHeader(MY_CONTENT_TYPE, CONTENT_TYPE)
         request = builder.build()
-        return chain.proceed(request)
+
+        val response = chain.proceed(request)
+        val headerList: Headers = response.headers
+        for (header in headerList) {
+            Log.d("serviceRest", header.first + " " + header.second)
+        }
+        return response
 
     }
 
