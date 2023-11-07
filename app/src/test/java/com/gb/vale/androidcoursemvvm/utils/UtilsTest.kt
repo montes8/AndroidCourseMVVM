@@ -3,7 +3,6 @@ package com.gb.vale.androidcoursemvvm.utils
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.gb.vale.androidcoursemvvm.utils.isEmailValid
 import com.gb.vale.androidcoursemvvm.utils.lengthPlus1
-import kotlinx.android.synthetic.main.activity_login.*
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
